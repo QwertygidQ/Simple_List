@@ -11,7 +11,7 @@ typedef struct simple_list simple_list;
  * Creates and returns an instance of simple_list
  * 
  * @param element_size size of any element's size
- * @return created simple_list instance or NULL on fail to create the instance
+ * @return created simple_list instance or NULL on instance creation failure
  */
 simple_list* simple_list_create(size_t element_size);
 
@@ -28,7 +28,7 @@ void simple_list_destroy(simple_list* list);
  * 
  * @param list instance of simple_list to append to
  * @param elem element to append to the simple_list instance
- * @return true on success, false on fail
+ * @return true on success, false on failure
  */
 bool simple_list_push_back(simple_list* list, void* elem);
 
@@ -37,7 +37,7 @@ bool simple_list_push_back(simple_list* list, void* elem);
  * 
  * @param list instance of simple_list to remove from
  * @param index index of the element to remove from the simple_list instance
- * @return true on success, false on fail
+ * @return true on success, false on failure
  */
 bool simple_list_remove(simple_list* list, size_t index);
 
@@ -48,7 +48,7 @@ bool simple_list_remove(simple_list* list, size_t index);
  * 
  * @param list instance of simple_list to search through
  * @param elem element to search for
- * @return index of the element in the instance or -1 on fail to find the element
+ * @return index of the element in the instance or -1 if the element is not present
  */
 int simple_list_find(simple_list* list, void* elem);
 
@@ -65,7 +65,7 @@ void* simple_list_at(simple_list* list, size_t index);
  * Returns the length(number of elements) of the instance of simple_list
  * 
  * @param list instance of simple_list to get the length of
- * @return length of the instance of simple_list
+ * @return length of the simple_list instance
  */
 size_t simple_list_length(simple_list* list);
 
